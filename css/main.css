@@ -189,6 +189,7 @@ body .popup_menu-gratitude {
   background-color: #141414;
   color: #EDEDED;
   padding: 77px 30px;
+  overflow: auto;
 }
 body .popup_menu .logo,
 body .popup_menu-gratitude .logo {
@@ -570,6 +571,25 @@ body .main .content-container .main-info .container .hero-section .brand-info-ab
   -ms-flex-positive: 0;
       flex-grow: 0;
 }
+body .main .content-container .main-info .container .hero-section .partner-original {
+  max-width: 311px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+body .main .content-container .main-info .container .hero-section .partner-original-title {
+  margin-right: 30px;
+}
+body .main .content-container .main-info .container .hero-section .partner-original .moyo-logo {
+  width: 132px;
+  height: 48px;
+  margin-bottom: 108px;
+}
 body .main .content-container .main-info .container .hero-section .content-block {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -632,25 +652,6 @@ body .main .content-container .main-info .container .hero-section .content-block
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-body .main .content-container .main-info .container .hero-section .content-block .contacts-block .contacts-info .partner-original {
-  max-width: 311px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-body .main .content-container .main-info .container .hero-section .content-block .contacts-block .contacts-info .partner-original-title {
-  margin-right: 30px;
-}
-body .main .content-container .main-info .container .hero-section .content-block .contacts-block .contacts-info .partner-original .moyo-logo {
-  width: 132px;
-  height: 48px;
-  margin-bottom: 108px;
 }
 body .main .content-container .main-info .container .hero-section .content-block .contacts-block .contacts-info .partner {
   max-width: 311px;
@@ -864,21 +865,84 @@ body .main .content-container .company-info-title {
   }
 }
 @media screen and (max-width: 475px) {
+  body .popup_menu,
+body .popup_menu-gratitude {
+    padding: 45px 19px 45px 21px;
+  }
+  body .popup_menu .popup-title,
+body .popup_menu-gratitude .popup-title {
+    font-size: 18px;
+  }
+  body .popup_menu .popup-text,
+body .popup_menu-gratitude .popup-text {
+    font-size: 14px;
+    line-height: 147%;
+    text-align: center;
+    color: #EDEDED;
+  }
+  body .popup_menu .btn-close,
+body .popup_menu-gratitude .btn-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+  body .popup_menu .btn-close:hover,
+body .popup_menu-gratitude .btn-close:hover {
+    cursor: pointer;
+  }
+  body .popup_menu .download-modal_inputs,
+body .popup_menu-gratitude .download-modal_inputs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 300px;
+  }
+  body .popup_menu .download-modal_inputs label,
+body .popup_menu-gratitude .download-modal_inputs label {
+    margin-bottom: 25px;
+    font-size: 16px;
+    line-height: 140%;
+    color: #F2F2F2;
+  }
+  body .popup_menu .download-modal_inputs label:last-of-type,
+body .popup_menu-gratitude .download-modal_inputs label:last-of-type {
+    margin-bottom: 0;
+  }
+  body .popup_menu .download-modal_inputs input,
+body .popup_menu-gratitude .download-modal_inputs input {
+    width: 300px;
+    padding: 0 20px;
+  }
   body .popup_menu .download-modal_inputs input::-webkit-input-placeholder, body .popup_menu-gratitude .download-modal_inputs input::-webkit-input-placeholder {
-    font-size: 10px;
+    font-size: 14px;
   }
   body .popup_menu .download-modal_inputs input::-moz-placeholder, body .popup_menu-gratitude .download-modal_inputs input::-moz-placeholder {
-    font-size: 10px;
+    font-size: 14px;
   }
   body .popup_menu .download-modal_inputs input:-ms-input-placeholder, body .popup_menu-gratitude .download-modal_inputs input:-ms-input-placeholder {
-    font-size: 10px;
+    font-size: 14px;
   }
   body .popup_menu .download-modal_inputs input::-ms-input-placeholder, body .popup_menu-gratitude .download-modal_inputs input::-ms-input-placeholder {
-    font-size: 10px;
+    font-size: 14px;
   }
   body .popup_menu .download-modal_inputs input::placeholder,
 body .popup_menu-gratitude .download-modal_inputs input::placeholder {
-    font-size: 10px;
+    font-size: 14px;
+  }
+  body .popup_menu .download-modal_inputs .download-modal-btn,
+body .popup_menu-gratitude .download-modal_inputs .download-modal-btn {
+    margin-top: 35px;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 300px;
+  }
+  body .popup_menu .download-modal_inputs .private-info-text,
+body .popup_menu-gratitude .download-modal_inputs .private-info-text {
+    text-align: left;
   }
   body .main .block_video video {
     left: 0;
@@ -892,22 +956,6 @@ body .popup_menu-gratitude .download-modal_inputs input::placeholder {
   }
 }
 @media screen and (max-width: 393px) {
-  body .popup_menu .download-modal_inputs input::-webkit-input-placeholder, body .popup_menu-gratitude .download-modal_inputs input::-webkit-input-placeholder {
-    font-size: 10px;
-  }
-  body .popup_menu .download-modal_inputs input::-moz-placeholder, body .popup_menu-gratitude .download-modal_inputs input::-moz-placeholder {
-    font-size: 10px;
-  }
-  body .popup_menu .download-modal_inputs input:-ms-input-placeholder, body .popup_menu-gratitude .download-modal_inputs input:-ms-input-placeholder {
-    font-size: 10px;
-  }
-  body .popup_menu .download-modal_inputs input::-ms-input-placeholder, body .popup_menu-gratitude .download-modal_inputs input::-ms-input-placeholder {
-    font-size: 10px;
-  }
-  body .popup_menu .download-modal_inputs input::placeholder,
-body .popup_menu-gratitude .download-modal_inputs input::placeholder {
-    font-size: 10px;
-  }
   body .main .content-container {
     padding: 0 18px 0 17px;
   }

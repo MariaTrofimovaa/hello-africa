@@ -6,20 +6,20 @@ $accent-color: #FEC600;
 $popup-bg-color:  #141414;;
 $popup-color: #F2F2F2;
 
-  *,
+*,
   *::before,
   *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     outline: none;
-  }
+}
 
-  a, ul {
+a, ul {
     text-decoration: none;
     list-style: none;
     font-style: normal;
-  }
+}
 
 body {
     font-family: 'Inter-Regular', sans-serif;
@@ -55,10 +55,13 @@ body {
         z-index: 25;
         max-width: 590px;
         width: 90%;
+        // height: 685px;
+        // height: 100%;
         box-sizing: border-box;
         background-color: $popup-bg-color;
         color: $primary-text-color;
         padding: 77px 30px;
+        overflow: auto;
 
         .logo {
             display: flex;
@@ -384,12 +387,10 @@ body {
 
                             &-title {
                                 font-family: 'Inter-Medium', sans-serif;
-                                // font-size: 14px;
                                 line-height: 120%;
                                 color: $primary-text-color;
                                 opacity: 0.5;
                                 margin-bottom: 30px;
-                                // margin-right: 25px;
                                 }
 
             
@@ -412,11 +413,6 @@ body {
 
                                 &-text {
                                 width: 299px;
-                                // font-style: normal;
-                                // font-weight: 400;
-                                // font-size: 14px;
-                                // line-height: 147%;
-                                // color: $primary-text-color;
                                 flex: none;
                                 order: 1;
                                 flex-grow: 0;
@@ -426,9 +422,25 @@ body {
                             }
                         }
 
+                        .partner-original{
+                                    max-width: 311px;
+                                    display: flex;
+                                    align-items: flex-start;
+                                    flex-wrap: wrap;
+                                    &-title{
+                                        margin-right: 30px;
+                                    }
+                                    .moyo-logo{
+                                        width: 132px;
+                                        height: 48px;
+                                        margin-bottom: 108px;
+                                    }
+                        }
+                        
                         .content-block {
                             display: flex;
                             justify-content: space-between;
+
 
                             .about-clients {
                                     max-width: 380px;
@@ -436,9 +448,6 @@ body {
                                     flex-direction: column;
                                     
                                     &-list {
-                                        // display: grid;
-                                        // grid-template-columns: repeat(2,1fr);
-                                        // column-gap: 40px;
                                         display: grid;
                                         grid-template-columns: 190px 1fr;
                                         column-gap: 40px;
@@ -472,30 +481,13 @@ body {
                                     display: flex;
                                     flex-direction: column;
 
-                                    .partner-original{
-                                        max-width: 311px;
-                                        display: flex;
-                                        align-items: flex-start;
-                                        flex-wrap: wrap;
-                                        // justify-content: space-between;
-                                        // margin-bottom: 30px;
-                                        &-title{
-                                            margin-right: 30px;
-                                        }
-                                        .moyo-logo{
-                                            width: 132px;
-                                            height: 48px;
-                                            margin-bottom: 108px;
-                                        }
-                                    }
+                                    
 
                                     .partner {
                                         max-width: 311px;
                                         display: flex;
                                         align-items: flex-start;
                                         flex-wrap: wrap;
-                                        // justify-content: space-between;
-                                        // margin-bottom: 30px;
                                         &-title{
                                             margin-right: 30px;
                                         }
@@ -506,16 +498,6 @@ body {
                                         }
                                     }
 
-                
-                                    // &-title {
-                                    //     font-family: 'Inter-Medium', sans-serif;
-                                    //     font-size: 14px;
-                                    //     line-height: 120%;
-                                    //     color: $primary-text-color;
-                                    //     opacity: 0.5;
-                                    //     margin-bottom: 30px;
-                                    // }
-                
                                     &-text {
                                         font-weight: 400;
                                         font-size: 14px;
@@ -556,7 +538,6 @@ body {
                 display: flex;
                 justify-content: space-between;
                 padding: 35px 0 38.5px 0;
-                // color: $primary-text-color;
                 opacity: 0.5;
                 
                 &-blocks {
@@ -605,9 +586,7 @@ body {
                         .hero-section {
                             .brand-info {
                                 
-                                
                                 &-about {
-                                    // width: 675px;
                                     
                                     &-text {
                                         max-width: 250px;
@@ -624,11 +603,7 @@ body {
 
     @media screen and (max-width: 1220px) {
         .main {
-            // .block_video{
-            //     video {
-            //         left: -90%;
-            //     }
-            // }
+
             .content-container {
                 padding: 0 100px 0 100px;
                 .main-info {
@@ -698,7 +673,6 @@ body {
                                     grid-template-columns: 180px 1fr;
                                     }
                                 .contacts-block {
-                                    // width: 330px;
                                     .contacts-info {
                                         .moyo-logo{
                                             margin-bottom: 30px;
@@ -736,10 +710,6 @@ body {
                                 align-items: center;
                                 margin-bottom: 35px;
                             }
-
-                            // &-block {
-                            //     margin-bottom: 44px;
-                            // }
                         }
                     }
                 }
@@ -775,9 +745,6 @@ body {
                                 }
 
                                 .moyo-logo {
-                                    // width: 77px;
-                                    // height: 18px;
-                                    
                                     width: 132px;
                                     height: 48px;
                                     margin-bottom: 62px;
@@ -824,14 +791,78 @@ body {
     }
 
     @media screen and (max-width: 475px) {
-        .popup_menu,
-        .popup_menu-gratitude {
-            .download-modal_inputs {
-                input::placeholder {
-                    font-size: 10px;
-                }
-            }     
+        // .popup_menu,
+        // .popup_menu-gratitude {
+        //     .download-modal_inputs {
+        //         input::placeholder {
+        //             font-size: 10px;
+        //         }
+        //     }     
+        // }
+
+    .popup_menu,
+    .popup_menu-gratitude {
+        padding: 45px 19px 45px 21px;
+
+        .popup-title {
+            font-size: 18px;
         }
+
+        .popup-text {
+            font-size: 14px;
+            line-height: 147%;
+            text-align: center;
+            color: $primary-text-color;
+        }
+
+        .btn-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .download-modal_inputs {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+
+            label {
+                margin-bottom: 25px;
+                font-size: 16px;
+                line-height: 140%;
+                color: $popup-color;
+            }
+
+            label:last-of-type {
+                margin-bottom: 0;
+            }
+
+            input {
+               width: 300px;
+                padding: 0 20px ;
+            }
+
+            input::placeholder {
+                font-size: 14px;
+            }
+
+            .download-modal-btn {
+                margin-top: 35px;
+                margin-bottom: 15px;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .private-info-text {
+                text-align: left;
+                
+            }
+        }
+    }
 
         .main {
             .block_video{
@@ -850,15 +881,6 @@ body {
     }
 
     @media screen and (max-width: 393px) {
-        .popup_menu,
-        .popup_menu-gratitude {
-            .download-modal_inputs {
-                input::placeholder {
-                    font-size: 10px;
-                }
-            }     
-        }
-
         .main {
             .content-container {
                 padding: 0 18px 0 17px;
@@ -905,7 +927,6 @@ body {
 
                             .content-block {
                                 .about-clients-list {
-                                    // grid-template-columns: 180px 1fr;
                                     column-gap: 18px;
                                     }
                             }
