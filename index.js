@@ -42,75 +42,36 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-/*
+ /*
  * Move partner block
  */
 
-// function checkScreenWidth() {
-//   const partnerDiv = document.querySelector(".partner");
-//   const contentDiv = document.querySelector(".content-block");
-//   const screenWidth = window.innerWidth;
-//   if (screenWidth <= 850) {
-//     contentDiv.parentNode.insertBefore(partnerDiv, contentDiv);
-//   } else {
-//     partnerDiv.parentNode.insertBefore(
-//       partnerDiv,
-//       partnerDiv.parentNode.firstChild
-//     );
-//   }
-// }
-
-// window.addEventListener("DOMContentLoaded", checkScreenWidth);
-// window.addEventListener("resize", checkScreenWidth);
-
-// ******************
-
-// function checkScreenWidth() {
-//   const screenWidth = window.innerWidth;
-//   const partnerDiv = document.querySelector(".partner");
-//   const contentDiv = document.querySelector(".content-block");
-//   const parentDiv = contentDiv.parentNode;
-
-//   if (screenWidth <= 850) {
-//     // Переносим <div class="partner"> перед <div class="content-block">
-//     if (!parentDiv.contains(partnerDiv)) {
-//       parentDiv.insertBefore(partnerDiv, contentDiv);
-//       partnerDiv.removeAttribute("style"); // Сбрасываем инлайновые стили
-//     }
-//   } else {
-//     // Возвращаем <div class="partner"> на исходное место
-//     if (partnerDiv.parentNode !== parentDiv) {
-//       parentDiv.insertBefore(partnerDiv, contentDiv);
-//       partnerDiv.removeAttribute("style"); // Сбрасываем инлайновые стили
-//     }
-//   }
-// }
-
-// window.addEventListener("DOMContentLoaded", checkScreenWidth);
-// window.addEventListener("resize", checkScreenWidth);
-
-// **************
 function checkScreenWidth() {
   const screenWidth = window.innerWidth;
   const partnerDiv = document.querySelector(".partner");
   const contentDiv = document.querySelector(".content-block");
-  const parentDiv = contentDiv.parentNode;
+  const contactsInfoDiv = document.querySelector(".contacts-info");
 
   if (screenWidth <= 850) {
-    // Переносим <div class="partner"> перед <div class="content-block">
-    if (!parentDiv.contains(partnerDiv)) {
-      parentDiv.insertBefore(partnerDiv, contentDiv);
-      partnerDiv.classList.remove("partner-original"); // Удаляем класс, который применяет стили
+    if (partnerDiv.nextElementSibling !== contentDiv) {
+      contentDiv.parentNode.insertBefore(partnerDiv, contentDiv);
     }
-  } else {
-    // Возвращаем <div class="partner"> на исходное место
-    if (partnerDiv.parentNode !== parentDiv) {
-      parentDiv.insertBefore(partnerDiv, contentDiv);
-      partnerDiv.classList.add("partner-original"); // Применяем класс с исходными стилями
-      partnerDiv.removeAttribute("style"); // Удаляем инлайновые стили, если они были применены
+  } else if (screenWidth === 851) {
+    if (partnerDiv.nextElementSibling !== contactsInfoDiv) {
+      contentDiv.parentNode.insertBefore(
+        partnerDiv,
+        contactsInfoDiv.nextSibling
+      );
     }
   }
 }
+
+window.addEventListener("DOMContentLoaded", checkScreenWidth);
+window.addEventListener("resize", checkScreenWidth);
+
+/*
+* Popup actions
+*/
 
 function popupShow() {
   let popup = document.querySelector(".popup_menu");
@@ -148,6 +109,10 @@ function gratitudeClosePopup() {
   popup.style.display = "none";
   overlayClose();
 }
+
+/*
+* Form submit action
+*/ 
 
 function handleSubmit(event, url) {
   event.preventDefault();
