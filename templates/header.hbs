@@ -1,0 +1,31 @@
+<header>
+  <div class="container">
+    <img class="logo" src="./assets/img/logo-hello-africa.svg" alt="Logo" />
+    <div class="lang_block">
+      <ul class="dropdown-lang">
+        <li class="dropdown-li">
+          <div class="active_langs dropdown-li">
+            <span class="lang-title" >{{first_lang}}</span>
+            <img
+              class="arrow-down"
+              src="./assets/img/selection-arrow.svg"
+              alt="arrow-down"
+            />
+          </div>
+          <div class="disabled_langs main-dropdown-menu" style="display: none">
+              <a href="#" onClick="changeLanguage(event,'{{second_lang}}')">
+                <span class="lang-title">{{second_lang}}</span>
+              </a>
+          </div>
+        </li>
+      </ul>
+      <button
+        type="button"
+        onClick="popupShow()"
+        class="contact_us"
+      >
+        {{contact_us}}
+      </button>
+    </div>
+  </div>
+</header>
