@@ -451,6 +451,8 @@ body .main .content-container header .container .lang_block .contact_us {
 }
 body .main .content-container header .container .lang_block .contact_us:hover {
   cursor: pointer;
+  -webkit-filter: drop-shadow(0px 0px 10px #FEC600);
+          filter: drop-shadow(0px 0px 10px #FEC600);
 }
 body .main .content-container .main-info {
   position: relative;
@@ -522,6 +524,8 @@ body .main .content-container .main-info .container .hero-section .brand-info .p
 }
 body .main .content-container .main-info .container .hero-section .brand-info .primary-button:hover {
   cursor: pointer;
+  -webkit-filter: drop-shadow(0px 0px 10px #FEC600);
+          filter: drop-shadow(0px 0px 10px #FEC600);
 }
 body .main .content-container .main-info .container .hero-section .brand-info .brand {
   display: -webkit-box;
@@ -750,9 +754,6 @@ body .main .content-container .company-info-title {
   body .main .content-container .main-info .container .hero-section .brand-info-about {
     max-width: 735px;
   }
-  body .main .content-container .main-info .container .hero-section .brand-info-about-text {
-    max-width: 350px;
-  }
   body .main .content-container .main-info .container .hero-section .content-block .contacts-block {
     width: 330px;
   }
@@ -914,7 +915,7 @@ body .popup_menu-gratitude .download-modal_inputs label:last-of-type {
   }
   body .popup_menu .download-modal_inputs input,
 body .popup_menu-gratitude .download-modal_inputs input {
-    width: 300px;
+    max-width: 300px;
     padding: 0 20px;
   }
   body .popup_menu .download-modal_inputs input::-webkit-input-placeholder, body .popup_menu-gratitude .download-modal_inputs input::-webkit-input-placeholder {
