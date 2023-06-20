@@ -49,19 +49,20 @@ body {
     .popup_menu-gratitude {
         display: none;
         vertical-align: middle;
-        position: fixed;
-        top: 10%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        overflow-y: auto;
+        max-height: calc(100vh - 50px);
         margin: 0 auto;
-        z-index: 25;
         max-width: 590px;
         width: 90%;
-        // height: 685px;
-        // height: 100%;
+        z-index: 25;
         box-sizing: border-box;
         background-color: $popup-bg-color;
         color: $primary-text-color;
-        padding: 77px 30px;
-        overflow: auto;
+        padding: 73px 30px 77px;
 
         .logo {
             display: flex;
