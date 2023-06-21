@@ -192,7 +192,7 @@ async function sendExternalEmail(accessToken, formData) {
         },
       ],
     },
-    saveToSentItems: true,
+    saveToSentItems: false,
   };
 
   try {
