@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /*
    * Multilingual dropdown list
    */
+
   $(document).ready(function () {
     $("a.dropdown-a").on("click", function (e) {
       e.preventDefault();
@@ -17,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
           "timer",
           setTimeout(
             $.proxy(function () {
-              $("ul, .disabled_langs", this)
+              $("ul, .disabled_langs, .disabled_langs_mob", this)
                 .stop(true, true)
                 .slideUp(200);
             }, this),
@@ -41,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
- /*
+/*
  * Move partner block
  */
 
@@ -69,8 +70,8 @@ window.addEventListener("DOMContentLoaded", checkScreenWidth);
 window.addEventListener("resize", checkScreenWidth);
 
 /*
-* Popup actions
-*/
+ * Popup actions
+ */
 
 function popupShow() {
   let popup = document.querySelector(".popup_menu");
@@ -110,8 +111,8 @@ function gratitudeClosePopup() {
 }
 
 /*
-* Form submit action
-*/ 
+ * Form submit action
+ */
 
 function handleSubmit(event, url) {
   event.preventDefault();
@@ -131,7 +132,7 @@ function handleSubmit(event, url) {
   formData["source"] = hostname;
 
   axios
-    .post("http://localhost:8080/api/v1/client", formData)
+    .post("/api/v1/client", formData)
     .then((response) => {
       console.log("Данные формы успешно отправлены на сервер");
       gratitudePopupShow();
@@ -141,4 +142,13 @@ function handleSubmit(event, url) {
     });
 
   return false;
+}
+
+function changeLanguage(event, lang) {
+  event.preventDefault();
+  const hostname = window.location.hostname;
+  // remove "port" for prod
+  const port = window.location.port;
+  const newUrl = `http://${hostname}:${port}/${lang}`;
+  window.location.href = newUrl;
 }
