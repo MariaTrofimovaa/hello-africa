@@ -37,7 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
   if (windowInnerWidth <= 475) {
     let movie = document.querySelector("video");
     // change "#" to video path
-    movie.setAttribute("src", "#");
+    movie.setAttribute(
+      "src",
+      "https://hellogeorgia.io/background-video_mob.mp4"
+    );
     document.querySelector("video").play();
   }
 });
@@ -130,6 +133,7 @@ function handleSubmit(event, url) {
   }
 
   formData["source"] = hostname;
+  formData["url"] = url;
 
   axios
     .post("/api/v1/client", formData)
@@ -147,8 +151,7 @@ function handleSubmit(event, url) {
 function changeLanguage(event, lang) {
   event.preventDefault();
   const hostname = window.location.hostname;
-  // remove "port" for prod
   const port = window.location.port;
-  const newUrl = `http://${hostname}:${port}/${lang}`;
+  const newUrl = `https://${hostname}:${port}/${lang}`;
   window.location.href = newUrl;
 }
