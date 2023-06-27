@@ -175,6 +175,14 @@ body {
         }
       }
     }
+
+      .private-info-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top: 10px;
+      }
+
      .private-info-text {
         max-width: 250px;
         font-style: normal;
@@ -183,10 +191,6 @@ body {
         line-height: 147%;
         color: $primary-text-color;
         opacity: 0.5;
-        position: absolute;
-        // top: 100%;
-        right: 5%;
-        margin-top: 10px;
 
         a {
           text-decoration: underline;
@@ -245,7 +249,7 @@ body {
                 height: 100%;
                 position: absolute;
                 background: rgb(8, 7, 7);
-                opacity: 0.5; // вернуть, когда будет видео
+                opacity: 0.5;
                 top: 0;
                 left: 0;
                 z-index: 2;
@@ -594,6 +598,16 @@ body {
         &-title {
           font-size: 12px;
         }
+
+        .copy-notification {
+            display: inline-block;
+            margin-left: 5px;
+            padding: 4px 8px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #555555;
+        }
       }
     }
 }
@@ -863,8 +877,9 @@ body {
         }
 
       }
-      .private-info-text {
-        left: 5%;
+
+      .private-info-wrapper {
+        justify-content: flex-start;
       }
     }
 
