@@ -176,8 +176,7 @@ body .popup_background {
   justify-content: center;
   align-items: center;
 }
-body .popup_menu,
-body .popup_menu-gratitude {
+body .popup_menu {
   display: none;
   vertical-align: middle;
   position: absolute;
@@ -193,21 +192,18 @@ body .popup_menu-gratitude {
   box-sizing: border-box;
   background-color: #141414;
   color: #EDEDED;
-  padding: 73px 30px 77px;
+  padding: 73px 30px 10px;
 }
-body .popup_menu .popup_logo,
-body .popup_menu-gratitude .popup_logo {
+body .popup_menu .popup_logo {
   display: flex;
   justify-content: center;
 }
-body .popup_menu .popup_logo img,
-body .popup_menu-gratitude .popup_logo img {
+body .popup_menu .popup_logo img {
   margin: 0 auto 48px;
   width: 264px;
   height: 45px;
 }
-body .popup_menu .popup-title,
-body .popup_menu-gratitude .popup-title {
+body .popup_menu .popup-title {
   font-family: "Nunito-ExtraBold", sans-serif;
   text-align: center;
   font-size: 24px;
@@ -215,26 +211,23 @@ body .popup_menu-gratitude .popup-title {
   letter-spacing: 0.035em;
   max-width: 344px;
   margin: 0 auto 56px;
+  text-transform: uppercase;
 }
-body .popup_menu .popup-text,
-body .popup_menu-gratitude .popup-text {
+body .popup_menu .popup-text {
   font-size: 14px;
   line-height: 147%;
   text-align: center;
   color: #EDEDED;
 }
-body .popup_menu .btn-close,
-body .popup_menu-gratitude .btn-close {
+body .popup_menu .btn-close {
   position: absolute;
   top: 16px;
   right: 16px;
 }
-body .popup_menu .btn-close:hover,
-body .popup_menu-gratitude .btn-close:hover {
+body .popup_menu .btn-close:hover {
   cursor: pointer;
 }
-body .popup_menu .download-modal_inputs,
-body .popup_menu-gratitude .download-modal_inputs {
+body .popup_menu .download-modal_inputs {
   margin: auto;
   width: 100%;
   display: grid;
@@ -244,8 +237,7 @@ body .popup_menu-gratitude .download-modal_inputs {
   align-items: center;
   position: relative;
 }
-body .popup_menu .download-modal_inputs label,
-body .popup_menu-gratitude .download-modal_inputs label {
+body .popup_menu .download-modal_inputs label {
   align-self: flex-start;
   margin-bottom: 33px;
   position: relative;
@@ -255,16 +247,13 @@ body .popup_menu-gratitude .download-modal_inputs label {
   font-size: 14px;
   line-height: 147%;
 }
-body .popup_menu .download-modal_inputs label:last-of-type,
-body .popup_menu-gratitude .download-modal_inputs label:last-of-type {
+body .popup_menu .download-modal_inputs label:last-of-type {
   margin-bottom: 0;
 }
-body .popup_menu .download-modal_inputs .input-title,
-body .popup_menu-gratitude .download-modal_inputs .input-title {
+body .popup_menu .download-modal_inputs .input-title {
   color: #F2F2F2;
 }
-body .popup_menu .download-modal_inputs input,
-body .popup_menu-gratitude .download-modal_inputs input {
+body .popup_menu .download-modal_inputs input {
   width: 100%;
   height: 50px;
   color: #F2F2F2;
@@ -274,8 +263,7 @@ body .popup_menu-gratitude .download-modal_inputs input {
   background: transparent;
   margin-top: 5px;
 }
-body .popup_menu .download-modal_inputs .download-modal-btn,
-body .popup_menu-gratitude .download-modal_inputs .download-modal-btn {
+body .popup_menu .download-modal_inputs .download-modal-btn {
   width: 100%;
   max-width: 250px;
   height: 50px;
@@ -294,12 +282,16 @@ body .popup_menu-gratitude .download-modal_inputs .download-modal-btn {
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
-body .popup_menu .download-modal_inputs .download-modal-btn:hover,
-body .popup_menu-gratitude .download-modal_inputs .download-modal-btn:hover {
+body .popup_menu .download-modal_inputs .download-modal-btn:hover {
   cursor: pointer;
 }
-body .popup_menu .private-info-text,
-body .popup_menu-gratitude .private-info-text {
+body .popup_menu .private-info-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 10px;
+}
+body .popup_menu .private-info-text {
   max-width: 250px;
   font-style: normal;
   font-weight: 400;
@@ -307,14 +299,63 @@ body .popup_menu-gratitude .private-info-text {
   line-height: 147%;
   color: #EDEDED;
   opacity: 0.5;
-  position: absolute;
-  right: 5%;
-  margin-top: 10px;
 }
-body .popup_menu .private-info-text a,
-body .popup_menu-gratitude .private-info-text a {
+body .popup_menu .private-info-text a {
   text-decoration: underline;
   color: #EDEDED;
+}
+body .popup_menu-gratitude {
+  display: none;
+  vertical-align: middle;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: auto;
+  max-height: calc(100vh - 50px);
+  margin: 0 auto;
+  max-width: 590px;
+  width: 90%;
+  z-index: 25;
+  box-sizing: border-box;
+  background-color: #141414;
+  color: #EDEDED;
+  padding: 77px 31px 77px 29px;
+}
+body .popup_menu-gratitude .popup_logo {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 48px;
+}
+body .popup_menu-gratitude .popup_logo img {
+  width: 264px;
+  height: 45px;
+}
+body .popup_menu-gratitude .popup-title {
+  font-family: "Nunito-ExtraBold", sans-serif;
+  text-align: center;
+  font-size: 24px;
+  line-height: 140%;
+  letter-spacing: 0.035em;
+  max-width: 530px;
+  margin: 0 auto 43px;
+  text-transform: uppercase;
+}
+body .popup_menu-gratitude .popup-text {
+  font-size: 14px;
+  line-height: 147%;
+  text-align: center;
+  max-width: 386px;
+  margin: 0 auto;
+  color: #EDEDED;
+}
+body .popup_menu-gratitude .btn-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+body .popup_menu-gratitude .btn-close:hover {
+  cursor: pointer;
 }
 body .container {
   max-width: 1200px;
@@ -586,7 +627,7 @@ body .main .content-container .main-info .container .hero-section .content-block
   align-items: flex-end;
 }
 body .main .content-container .main-info .container .hero-section .content-block .contacts-block .contacts-info {
-  width: 434px;
+  max-width: 434px;
   display: flex;
   flex-direction: column;
 }
@@ -665,6 +706,15 @@ body .main .content-container .company-info .block-cooperation {
 body .main .content-container .company-info-title {
   font-size: 12px;
 }
+body .main .content-container .company-info .copy-notification {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 4px 8px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #555555;
+}
 @media screen and (max-width: 1850px) {
   body .main .content-container {
     padding: 0 200px 0 200px;
@@ -717,9 +767,6 @@ body .main .content-container .company-info-title {
   }
 }
 @media screen and (max-width: 850px) {
-  body .main .block_video video {
-    left: -115%;
-  }
   body .main .content-container .main-info .container .hero-section {
     margin-bottom: 62px;
   }
@@ -773,9 +820,10 @@ body .main .content-container .company-info-title {
     font-size: 12px;
   }
 }
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 530px) {
   body .popup_menu,
 body .popup_menu-gratitude {
+    max-width: 340px;
     padding: 45px 19px 45px 21px;
   }
   body .popup_menu .popup_logo,
@@ -849,9 +897,9 @@ body .popup_menu-gratitude .download-modal_inputs .download-modal-btn {
     width: 100%;
     max-width: 300px;
   }
-  body .popup_menu .private-info-text,
-body .popup_menu-gratitude .private-info-text {
-    left: 5%;
+  body .popup_menu .private-info-wrapper,
+body .popup_menu-gratitude .private-info-wrapper {
+    justify-content: flex-start;
   }
   body .main .block_video video {
     left: 0;
@@ -897,7 +945,7 @@ body .popup_menu-gratitude .private-info-text {
     margin-right: 58px;
   }
   body .main .content-container .main-info .container .hero-section .brand-info-about-text {
-    width: 230px;
+    max-width: 230px;
   }
   body .main .content-container .main-info .container .hero-section .content-block .about-clients-list {
     -moz-column-gap: 18px;
@@ -911,5 +959,13 @@ body .popup_menu-gratitude .private-info-text {
   body .main .content-container header .container .logo {
     width: 107px;
     height: 23px;
+  }
+  body .main .content-container .main-info .container .hero-section .brand-info-about-text {
+    max-width: 189px;
+  }
+}
+@media screen and (max-width: 346px) {
+  body .main .content-container .main-info .container .hero-section .brand-info-about-text {
+    max-width: 100px;
   }
 }/*# sourceMappingURL=main.css.map */
