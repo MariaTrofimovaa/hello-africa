@@ -146,6 +146,14 @@ a, ul {
   color: #EDEDED;
 }
 
+a:visited {
+  color: #EDEDED;
+}
+
+a:active {
+  color: #EDEDED;
+}
+
 body {
   font-family: "Inter-Regular", sans-serif;
   font-size: 14px;
@@ -195,8 +203,8 @@ body .popup_menu-gratitude .popup_logo {
 body .popup_menu .popup_logo img,
 body .popup_menu-gratitude .popup_logo img {
   margin: 0 auto 48px;
-  width: 315px;
-  height: 43px;
+  width: 264px;
+  height: 45px;
 }
 body .popup_menu .popup-title,
 body .popup_menu-gratitude .popup-title {
@@ -450,9 +458,9 @@ body .main .content-container .main-info .container .about-title {
   max-width: 667px;
   width: 100%;
   font-family: "Nunito-ExtraBold", sans-serif;
-  font-size: 34px;
+  font-size: 38px;
   line-height: 140%;
-  letter-spacing: 0.035em;
+  letter-spacing: 1.33px;
   text-transform: uppercase;
 }
 body .main .content-container .main-info .container .about-block {
@@ -471,15 +479,17 @@ body .main .content-container .main-info .container .hero-section .brand-info {
 body .main .content-container .main-info .container .hero-section .brand-info .primary-button {
   display: block;
   float: right;
-  font-family: "Inter-Medium", sans-serif;
   margin-right: 195px;
   padding: 17.5px 24px;
   width: 237px;
   height: 50px;
-  background: transparent;
-  text-decoration: none;
   border: 1px solid #FEC600;
   border-radius: 314px;
+}
+body .main .content-container .main-info .container .hero-section .brand-info .primary-button-text {
+  font-family: "Inter-Medium", sans-serif;
+  background: transparent;
+  text-decoration: none;
   color: #FEC600;
   font-style: normal;
   font-size: 12px;
@@ -612,14 +622,25 @@ body .main .content-container .main-info .container .hero-section .content-block
   color: #EDEDED;
   margin-bottom: 18px;
 }
+body .main .content-container .main-info .container .hero-section .content-block .contacts-block .contacts-info .block-social .social-links {
+  display: flex;
+  align-items: center;
+}
+body .main .content-container .main-info .container .hero-section .content-block .contacts-block .contacts-info .block-social .region-social-links {
+  display: flex;
+  flex-direction: column;
+}
 body .main .content-container .main-info .container .hero-section .content-block .contacts-block .contacts-info .block-social .social-links-icon {
   width: 40px;
   height: 40px;
   margin-right: 16px;
+  transition: transform 0.2s ease-in-out;
 }
 body .main .content-container .main-info .container .hero-section .content-block .contacts-block .contacts-info .block-social .social-links-icon:hover {
-  width: 45px;
-  height: 45px;
+  transform: scale(1.125);
+}
+body .main .content-container .main-info .container .hero-section .content-block .contacts-block .contacts-info .block-social .icon-email {
+  margin-right: 0;
 }
 body .main .content-container .company-info {
   position: relative;
@@ -656,26 +677,17 @@ body .main .content-container .company-info-title {
   body .main .content-container .main-info .container .about-title {
     font-size: 30px;
   }
-  body .main .content-container .main-info .container .hero-section .brand-info-about-text {
-    max-width: 250px;
-  }
 }
 @media screen and (max-width: 1220px) {
   body .main .content-container {
     padding: 0 100px 0 100px;
   }
   body .main .content-container .main-info .container .about-title {
-    font-size: 20px;
+    font-size: 26px;
+    letter-spacing: 0.91px;
   }
   body .main .content-container .main-info .container .hero-section .brand-info-about {
     max-width: 735px;
-  }
-  body .main .content-container .main-info .container .hero-section .content-block .contacts-block {
-    width: 330px;
-  }
-  body .main .content-container .main-info .container .hero-section .content-block .contacts-block .contacts-info .block-social .social-links-icon {
-    width: 23px;
-    height: 23px;
   }
 }
 @media screen and (max-width: 997px) {
@@ -692,16 +704,8 @@ body .main .content-container .company-info-title {
   body .main .content-container .main-info .container .hero-section .content-block .contacts-block .contacts-info .moyo-logo {
     margin-bottom: 30px;
   }
-  body .main .content-container .main-info .container .hero-section .content-block .contacts-block .contacts-info .block-social .social-links-icon {
-    width: 23px;
-    height: 23px;
-  }
-  body .main .content-container .main-info .container .hero-section .content-block .contacts-block .contacts-info .block-social .social-links-icon:hover {
-    width: 28px;
-    height: 28px;
-  }
 }
-@media screen and (max-width: 912px) {
+@media screen and (max-width: 945px) {
   body .main .content-container .main-info .container .about {
     flex-direction: column;
     margin-bottom: 44px;
@@ -720,7 +724,7 @@ body .main .content-container .company-info-title {
     margin-bottom: 62px;
   }
   body .main .content-container .main-info .container .hero-section .brand-info-about {
-    margin-bottom: 70px;
+    margin-bottom: 62px;
   }
   body .main .content-container .main-info .container .hero-section .partner {
     max-width: 311px;
@@ -729,7 +733,8 @@ body .main .content-container .company-info-title {
     flex-wrap: wrap;
   }
   body .main .content-container .main-info .container .hero-section .partner .partner-title {
-    margin-right: 25px;
+    max-width: 102px;
+    margin-right: 38px;
   }
   body .main .content-container .main-info .container .hero-section .partner .moyo-logo {
     width: 132px;
@@ -743,7 +748,7 @@ body .main .content-container .company-info-title {
     margin-bottom: 62px;
   }
   body .main .content-container .main-info .container .hero-section .content-block .about-clients-list {
-    grid-template-columns: 190px 1fr;
+    grid-template-columns: 200px 1fr;
   }
 }
 @media screen and (max-width: 800px) {
@@ -756,7 +761,16 @@ body .main .content-container .company-info-title {
     padding: 0 75px 0 75px;
   }
   body .main .content-container .company-info {
-    flex-direction: column;
+    display: block;
+  }
+  body .main .content-container .company-info .primary-title {
+    margin-bottom: 0;
+  }
+  body .main .content-container .company-info-blocks {
+    margin-bottom: 20px;
+  }
+  body .main .content-container .company-info-title {
+    font-size: 12px;
   }
 }
 @media screen and (max-width: 475px) {
@@ -770,11 +784,13 @@ body .popup_menu-gratitude .popup_logo {
   }
   body .popup_menu .popup_logo img,
 body .popup_menu-gratitude .popup_logo img {
-    width: 198px;
-    height: 27px;
+    margin: 0 auto;
+    width: 167px;
+    height: 29px;
   }
   body .popup_menu .popup-title,
 body .popup_menu-gratitude .popup-title {
+    margin-bottom: 35px;
     font-size: 18px;
   }
   body .popup_menu .popup-text,
@@ -854,8 +870,15 @@ body .popup_menu-gratitude .private-info-text {
   body .main .content-container header .container .lang_block .dropdown-lang {
     margin-right: 12px;
   }
+  body .main .content-container .main-info .container .hero-section .brand-info-about-text {
+    max-width: 250px;
+  }
+  body .main .content-container .main-info .container .hero-section .partner .eclipse-logo {
+    width: 77px;
+    height: 34px;
+  }
 }
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 429px) {
   body .main .content-container {
     padding: 0 18px 0 17px;
   }
@@ -871,10 +894,10 @@ body .popup_menu-gratitude .private-info-text {
   body .main .content-container .main-info .container .hero-section .brand-info-about .logo-imans {
     width: 77px;
     height: 15px;
-    margin-right: 50px;
+    margin-right: 58px;
   }
   body .main .content-container .main-info .container .hero-section .brand-info-about-text {
-    width: 189px;
+    width: 230px;
   }
   body .main .content-container .main-info .container .hero-section .content-block .about-clients-list {
     -moz-column-gap: 18px;

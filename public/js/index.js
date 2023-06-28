@@ -37,7 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
   if (windowInnerWidth <= 475) {
     let movie = document.querySelector("video");
     // change "#" to video path
-    movie.setAttribute("src", "#");
+    movie.setAttribute(
+      "src",
+      "https://hellogeorgia.io/background-video_mob.mp4"
+    );
     document.querySelector("video").play();
   }
 });
@@ -117,6 +120,10 @@ function gratitudeClosePopup() {
 function handleSubmit(event, url) {
   event.preventDefault();
 
+  const submitButton = document.querySelector(".download-modal-btn");
+  submitButton.disabled = true;
+  const form = document.forms.myForm;
+
   const hostname = new URL(url).hostname;
 
   let formData = {};
@@ -130,15 +137,20 @@ function handleSubmit(event, url) {
   }
 
   formData["source"] = hostname;
+  formData["url"] = url;
 
   axios
     .post("/api/v1/client", formData)
     .then((response) => {
       console.log("Данные формы успешно отправлены на сервер");
       gratitudePopupShow();
+      form.reset();
     })
     .catch((error) => {
       console.error("Ошибка при отправке данных формы:", error.message);
+    })
+    .finally(() => {
+      submitButton.disabled = false;
     });
 
   return false;
@@ -147,8 +159,47 @@ function handleSubmit(event, url) {
 function changeLanguage(event, lang) {
   event.preventDefault();
   const hostname = window.location.hostname;
-  // remove "port" for prod
   const port = window.location.port;
-  const newUrl = `http://${hostname}:${port}/${lang}`;
+  const newUrl = `https://${hostname}:${port}/${lang}`;
   window.location.href = newUrl;
+}
+
+const copyEmails = document.querySelectorAll(".copy-email");
+copyEmails.forEach((element) => {
+  element.addEventListener("mouseenter", handleEmailMouseEnter);
+  element.addEventListener("mouseleave", handleEmailMouseLeave);
+});
+
+function handleEmailMouseEnter(event) {
+  const email = event.target.dataset.email;
+  event.target.addEventListener("click", () => {
+    copyToClipboard(email, event.target);
+  });
+  event.target.style.cursor = "pointer";
+}
+
+function handleEmailMouseLeave(event) {
+  event.target.removeEventListener("click", copyToClipboard);
+  event.target.style.cursor = "auto";
+}
+
+function copyToClipboard(text, element) {
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "absolute";
+  textarea.style.left = "-9999px";
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+
+  const notification = document.createElement("span");
+  notification.classList.add("copy-notification");
+  notification.textContent = "Copied";
+  element.parentNode.insertBefore(notification, element.nextSibling);
+
+  setTimeout(() => {
+    notification.remove();
+  }, 2000);
 }
