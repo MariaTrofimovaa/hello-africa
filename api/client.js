@@ -173,13 +173,27 @@ async function sendExternalEmail(accessToken, formData) {
   const apiUrl = process.env.GRAPH_API_URL;
 
   const email = formData.email;
-  const indexHtmlPath = path.join(__dirname, "..", "message.html");
+  const url = formData.url;
+
+  const urlPath = new URL(url);
+  const pathName = urlPath.pathname;
+
+  let indexHtmlPath;
+  let title = "";
+
+  if (pathName === "/ru") {
+    title = "Благодарим за Вашу заявку";
+    indexHtmlPath = path.join(__dirname, "..", "messageRu.html");
+  } else {
+    title = "Thank you for your request";
+    indexHtmlPath = path.join(__dirname, "..", "messageEn.html");
+  }
 
   const indexHtml = fs.readFileSync(indexHtmlPath, "utf8");
 
   const emailData = {
     message: {
-      subject: "Thank you for your request",
+      subject: title,
       body: {
         contentType: "HTML",
         content: indexHtml,

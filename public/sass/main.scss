@@ -22,6 +22,13 @@ a, ul {
     color: $primary-text-color;
 }
 
+a:visited {
+  color: $primary-text-color;
+}
+a:active {
+  color: $primary-text-color;
+}
+
 body {
     font-family: 'Inter-Regular', sans-serif;
     font-size: 14px;
@@ -70,22 +77,20 @@ body {
       justify-content: center;
       img {
         margin: 0 auto 48px;
-        width: 315px;
-        height: 43px;
+        width: 264px;
+        height: 45px;
       }
     }
 
     .popup-title {
       font-family: "Nunito-ExtraBold", sans-serif;
-      // font-style: normal;
-      // font-weight: 800;
       text-align: center;
       font-size: 24px;
       line-height: 140%;
       letter-spacing: 0.035em;
-      // margin-bottom: 56px;
       max-width: 344px;
       margin: 0 auto 56px;
+      text-transform: uppercase;
     }
 
     .popup-text {
@@ -170,6 +175,14 @@ body {
         }
       }
     }
+
+      .private-info-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top: 10px;
+      }
+
      .private-info-text {
         max-width: 250px;
         font-style: normal;
@@ -178,10 +191,6 @@ body {
         line-height: 147%;
         color: $primary-text-color;
         opacity: 0.5;
-        position: absolute;
-        // top: 100%;
-        right: 5%;
-        margin-top: 10px;
 
         a {
           text-decoration: underline;
@@ -240,7 +249,7 @@ body {
                 height: 100%;
                 position: absolute;
                 background: rgb(8, 7, 7);
-                opacity: 0.5; // вернуть, когда будет видео
+                opacity: 0.5;
                 top: 0;
                 left: 0;
                 z-index: 2;
@@ -349,10 +358,9 @@ body {
               max-width: 667px;
               width: 100%;
               font-family: "Nunito-ExtraBold", sans-serif;
-              font-size: 34px;
+              font-size: 38px;
               line-height: 140%;
-              // color: $primary-text-color;
-              letter-spacing: 0.035em;
+              letter-spacing: 1.33px;
               text-transform: uppercase;
             }
 
@@ -373,21 +381,24 @@ body {
               .primary-button {
                 display: block;
                 float: right;
-                font-family: "Inter-Medium", sans-serif;
                 margin-right: 195px;
                 padding: 17.5px 24px;
                 width: 237px;
                 height: 50px;
-                background: transparent;
-                text-decoration: none;
                 border: 1px solid $accent-color;
                 border-radius: 314px;
-                color: $accent-color;
-                font-style: normal;
-                font-size: 12px;
-                line-height: 15px;
-                letter-spacing: 0.05em;
-                text-transform: uppercase;
+
+                &-text {
+                  font-family: "Inter-Medium", sans-serif;
+                  background: transparent;
+                  text-decoration: none;
+                  color: $accent-color;
+                  font-style: normal;
+                  font-size: 12px;
+                  line-height: 15px;
+                  letter-spacing: 0.05em;
+                  text-transform: uppercase;
+                }
 
                 &:hover {
                   cursor: pointer;
@@ -530,14 +541,28 @@ body {
                       margin-bottom: 18px;
                     }
 
+                    .social-links {
+                      display: flex;
+                      align-items: center;
+                    }
+
+                    .region-social-links {
+                      display: flex;
+                      flex-direction: column;
+                    }
+            
+                                
                     .social-links-icon {
                       width: 40px;
                       height: 40px;
                       margin-right: 16px;
+                      transition: transform 0.2s ease-in-out;
                       &:hover {
-                        width: 45px;
-                        height: 45px;
+                        transform: scale(1.125); 
                       }
+                    }
+                    .icon-email {
+                      margin-right: 0;
                     }
                   }
                 }
@@ -573,6 +598,16 @@ body {
         &-title {
           font-size: 12px;
         }
+
+        .copy-notification {
+            display: inline-block;
+            margin-left: 5px;
+            padding: 4px 8px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #555555;
+        }
       }
     }
 }
@@ -602,16 +637,6 @@ body {
                 font-size: 30px;
               }
             }
-
-            .hero-section {
-              .brand-info {
-                &-about {
-                  &-text {
-                    max-width: 250px;
-                  }
-                }
-              }
-            }
           }
         }
       }
@@ -626,7 +651,8 @@ body {
           .container {
             .about {
               &-title {
-                font-size: 20px;
+                font-size: 26px;
+                letter-spacing: 0.91px;
               }
             }
 
@@ -634,25 +660,9 @@ body {
               .brand-info {
                 &-about {
                   max-width: 735px;
-                  // &-text {
-                    // max-width: 350px;
-                  // }
                 }
               }
 
-              .content-block {
-                .contacts-block {
-                  width: 330px;
-                  .contacts-info {
-                    .block-social {
-                      .social-links-icon {
-                        width: 23px;
-                        height: 23px;
-                      }
-                    }
-                  }
-                }
-              }
             }
           }
         }
@@ -665,12 +675,6 @@ body {
       .content-container {
         .main-info {
           .container {
-            // .about {
-            //   // &-title {
-            //   //   // font-size: 23px;
-            //   // }
-            // }
-
             .hero-section {
               .brand-info {
                 display: flex;
@@ -690,17 +694,6 @@ body {
                     .moyo-logo {
                       margin-bottom: 30px;
                     }
-                    .block-social {
-                      .social-links-icon {
-                        width: 23px;
-                        height: 23px;
-
-                        &:hover {
-                          width: 28px;
-                          height: 28px;
-                        }
-                      }
-                    }
                   }
                 }
               }
@@ -711,7 +704,7 @@ body {
     }
   }
 
-  @media screen and (max-width: 912px) {
+  @media screen and (max-width: 945px) {
     .main {
       .content-container {
         .main-info {
@@ -746,7 +739,7 @@ body {
               margin-bottom: 62px;
               .brand-info {
                 &-about {
-                  margin-bottom: 70px;
+                  margin-bottom: 62px;
                 }
               }
               .partner {
@@ -756,7 +749,8 @@ body {
                 flex-wrap: wrap;
 
                 .partner-title {
-                  margin-right: 25px;
+                  max-width: 102px;
+                  margin-right: 38px;
                 }
 
                 .moyo-logo {
@@ -771,7 +765,7 @@ body {
                 .about-clients {
                   margin-bottom: 62px;
                   &-list {
-                    grid-template-columns: 190px 1fr;
+                    grid-template-columns: 200px 1fr;
                   }
                 }
               }
@@ -798,7 +792,17 @@ body {
         padding: 0 75px 0 75px;
 
         .company-info {
-          flex-direction: column;
+                display: block;
+
+                .primary-title {
+                    margin-bottom: 0;
+                }
+                &-blocks {
+                    margin-bottom: 20px;
+                }
+                &-title{
+                font-size: 12px;
+                }
         }
       }
     }
@@ -812,12 +816,14 @@ body {
       .popup_logo {
         margin: 0 auto 48px;
         img {
-          width: 198px;
-          height: 27px;
+          margin: 0 auto;
+          width: 167px;
+          height: 29px;
         }
       }
 
       .popup-title {
+        margin-bottom: 35px;
         font-size: 18px;
       }
 
@@ -871,8 +877,9 @@ body {
         }
 
       }
-      .private-info-text {
-        left: 5%;
+
+      .private-info-wrapper {
+        justify-content: flex-start;
       }
     }
 
@@ -903,6 +910,29 @@ body {
             }
           }
         }
+
+        .main-info {
+          .container {
+            .hero-section {
+              .brand-info {
+                &-about {
+                  &-text {
+                    max-width: 250px;
+                  }
+                }
+              }
+
+              .partner {
+                .eclipse-logo {
+                  width: 77px;
+                  height: 34px;
+                  // margin-bottom: 62px;
+                }
+              }
+            }
+          }
+
+        }
       }
     }
   }
@@ -914,10 +944,6 @@ body {
 
         header {
           .container {
-            // .logo {
-            //   width: 107px;
-            //   height: 23px;
-            // }
             .lang_block {
               ul {
                 margin-right: 12px;
@@ -940,11 +966,11 @@ body {
                   .logo-imans {
                     width: 77px;
                     height: 15px;
-                    margin-right: 50px;
+                    margin-right: 58px;
                   }
 
                   &-text {
-                    width: 189px;
+                    width: 230px;
                   }
                 }
               }
