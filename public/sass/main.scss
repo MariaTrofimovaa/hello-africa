@@ -35,6 +35,69 @@ body {
     line-height: 147%;
     color: $primary-text-color;
 
+  .preloader {
+        position: fixed;
+        z-index: 999999;
+        background-color: #111;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .preloader.hide {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .loader {
+        display: inline-block;
+        margin-left: 5px;
+    }
+
+    .bounceball {
+        position: relative;
+        display: inline-block;
+        height: 37px;
+        width: 15px;
+            &:before {
+                position: absolute;
+                content: '';
+                display: block;
+                top: 0;
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                background-color: $accent-color;
+                transform-origin: 50%;
+                animation: bounce 500ms alternate infinite ease;
+            }
+        }
+
+    @keyframes bounce {
+        0% {
+            top: 30px;
+            height: 5px;
+            border-radius: 60px 60px 20px 20px;
+            transform: scaleX(2);
+        }
+        35% {
+            height: 15px;
+            border-radius: 50%;
+            transform: scaleX(1);
+        }
+        100% {
+            top: 0;
+        }
+    }
+
   .overlay {
     position: fixed;
     width: 100%;
@@ -440,7 +503,7 @@ body {
                 display: block;
                 float: right;
                 margin-right: 195px;
-                padding: 17.5px 24px;
+                padding: 17.5px 0 17.5px 24px;
                 width: 237px;
                 height: 50px;
                 border: 1px solid $accent-color;
@@ -637,6 +700,7 @@ body {
         justify-content: space-between;
         padding: 35px 0 38.5px 0;
         opacity: 0.5;
+        color: $primary-text-color;
 
         &-blocks {
           flex-direction: column;
@@ -655,6 +719,7 @@ body {
 
         &-title {
           font-size: 12px;
+          color: $primary-text-color;
         }
 
         .copy-notification {
@@ -729,6 +794,13 @@ body {
   }
 
   @media screen and (max-width: 997px) {
+    .popup_menu {
+      top: 25%;
+    }
+
+    .popup_menu-gratitude {
+      top: 25%;
+    }
     .main {
       .content-container {
         .main-info {
@@ -737,9 +809,9 @@ body {
               .brand-info {
                 display: flex;
                 flex-direction: column;
-
                 .primary-button {
                   margin: 0 auto 70px;
+                  padding: 17.5px 0 17.5px 20px;
                 }
               }
 
@@ -846,6 +918,7 @@ body {
 
   @media screen and (max-width: 680px) {
     .main {
+      height: auto; 
       .content-container {
         padding: 0 75px 0 75px;
 
@@ -958,8 +1031,8 @@ body {
         header {
           .container {
             .logo {
-              width: 133px;
-              height: 18px;
+              width: 194px;
+              height: 33px;
             }
 
             .lang_block {

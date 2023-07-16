@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // change "#" to video path
     movie.setAttribute(
       "src",
-      "https://hellogeorgia.io/background-video_mob.mp4"
+      "https://helloafrica.io/background-video_mob.mp4"
     );
     document.querySelector("video").play();
   }
@@ -71,6 +71,15 @@ function checkScreenWidth() {
 
 window.addEventListener("DOMContentLoaded", checkScreenWidth);
 window.addEventListener("resize", checkScreenWidth);
+
+/*
+ * Set preloader
+ */
+
+setTimeout(function () {
+  let preloader = document.querySelector(".preloader");
+  preloader.classList.add("hide");
+}, 2000);
 
 /*
  * Popup actions
