@@ -160,6 +160,79 @@ body {
   line-height: 147%;
   color: #EDEDED;
 }
+body .preloader {
+  position: fixed;
+  z-index: 999999;
+  background-color: #111;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+body .preloader.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+body .loader {
+  display: inline-block;
+  margin-left: 5px;
+}
+body .bounceball {
+  position: relative;
+  display: inline-block;
+  height: 37px;
+  width: 15px;
+}
+body .bounceball:before {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #FEC600;
+  transform-origin: 50%;
+  -webkit-animation: bounce 500ms alternate infinite ease;
+          animation: bounce 500ms alternate infinite ease;
+}
+@-webkit-keyframes bounce {
+  0% {
+    top: 30px;
+    height: 5px;
+    border-radius: 60px 60px 20px 20px;
+    transform: scaleX(2);
+  }
+  35% {
+    height: 15px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes bounce {
+  0% {
+    top: 30px;
+    height: 5px;
+    border-radius: 60px 60px 20px 20px;
+    transform: scaleX(2);
+  }
+  35% {
+    height: 15px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+  100% {
+    top: 0;
+  }
+}
 body .overlay {
   position: fixed;
   width: 100%;
@@ -509,25 +582,17 @@ body .main .content-container .main-info .container .about-block {
   flex-direction: column;
   max-width: 436px;
 }
-body .main .content-container .main-info .container .hero-section {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 49px;
-}
-body .main .content-container .main-info .container .hero-section .brand-info {
-  display: block;
-}
-body .main .content-container .main-info .container .hero-section .brand-info .primary-button {
+body .main .content-container .main-info .container .about .primary-button {
   display: block;
   float: right;
   margin-right: 195px;
-  padding: 17.5px 24px;
+  padding: 17.5px 0 17.5px 26px;
   width: 237px;
   height: 50px;
   border: 1px solid #FEC600;
   border-radius: 314px;
 }
-body .main .content-container .main-info .container .hero-section .brand-info .primary-button-text {
+body .main .content-container .main-info .container .about .primary-button-text {
   font-family: "Inter-Medium", sans-serif;
   background: transparent;
   text-decoration: none;
@@ -538,9 +603,17 @@ body .main .content-container .main-info .container .hero-section .brand-info .p
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
-body .main .content-container .main-info .container .hero-section .brand-info .primary-button:hover {
+body .main .content-container .main-info .container .about .primary-button:hover {
   cursor: pointer;
   filter: drop-shadow(0px 0px 10px #fec600);
+}
+body .main .content-container .main-info .container .hero-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 49px;
+}
+body .main .content-container .main-info .container .hero-section .brand-info {
+  display: block;
 }
 body .main .content-container .main-info .container .hero-section .brand-info .brand {
   display: flex;
@@ -596,40 +669,83 @@ body .main .content-container .main-info .container .hero-section .content-block
   justify-content: space-between;
 }
 body .main .content-container .main-info .container .hero-section .content-block .about-clients {
-  max-width: 380px;
+  max-width: 463px;
   display: flex;
   flex-direction: column;
 }
 body .main .content-container .main-info .container .hero-section .content-block .about-clients-list {
   display: grid;
-  grid-template-columns: 190px 1fr;
+  grid-template-columns: 215px 1fr;
   -moz-column-gap: 40px;
        column-gap: 40px;
+  margin-bottom: 35px;
 }
-body .main .content-container .main-info .container .hero-section .content-block .about-clients-list img {
-  margin-right: 10px;
+body .main .content-container .main-info .container .hero-section .content-block .about-clients-list .logo_imans {
+  width: 100px;
+  height: 20px;
 }
-body .main .content-container .main-info .container .hero-section .content-block .about-clients-text {
-  display: flex;
-  align-items: center;
+body .main .content-container .main-info .container .hero-section .content-block .about-clients-list .logo_gaming {
+  width: 173px;
+  height: 51.2px;
+}
+body .main .content-container .main-info .container .hero-section .content-block .about-clients-list .logo_africa {
+  width: 168px;
+  height: 31px;
+}
+body .main .content-container .main-info .container .hero-section .content-block .about-clients-list .logo_georgia {
+  width: 188px;
+  height: 26px;
+}
+body .main .content-container .main-info .container .hero-section .content-block .about-clients-list .logo_bacon {
+  width: 163px;
+  height: 17px;
+}
+body .main .content-container .main-info .container .hero-section .content-block .about-clients-list .logo_puma {
+  width: 63px;
+  height: 15.575px;
+}
+body .main .content-container .main-info .container .hero-section .content-block .about-clients-list p {
+  margin-bottom: 16px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 140%;
-  color: #EDEDED;
-  margin-bottom: 14px;
-}
-body .main .content-container .main-info .container .hero-section .content-block .about-clients-text:nth-last-child(-n+2) {
-  margin-bottom: 0px;
+  line-height: 147%;
+  width: 291px;
 }
 body .main .content-container .main-info .container .hero-section .content-block .contacts-block {
   display: flex;
-  align-items: flex-end;
+  justify-content: space-between;
 }
 body .main .content-container .main-info .container .hero-section .content-block .contacts-block .contacts-info {
   max-width: 434px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+body .main .content-container .main-info .container .hero-section .content-block .contacts-block .contacts-info .primary-button {
+  display: block;
+  float: right;
+  margin-right: 195px;
+  padding: 17.5px 0 17.5px 24px;
+  width: 237px;
+  height: 50px;
+  border: 1px solid #FEC600;
+  border-radius: 314px;
+}
+body .main .content-container .main-info .container .hero-section .content-block .contacts-block .contacts-info .primary-button-text {
+  font-family: "Inter-Medium", sans-serif;
+  background: transparent;
+  text-decoration: none;
+  color: #FEC600;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+body .main .content-container .main-info .container .hero-section .content-block .contacts-block .contacts-info .primary-button:hover {
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 10px #fec600);
 }
 body .main .content-container .main-info .container .hero-section .content-block .contacts-block .contacts-info .partner {
   max-width: 311px;
@@ -690,6 +806,7 @@ body .main .content-container .company-info {
   justify-content: space-between;
   padding: 35px 0 38.5px 0;
   opacity: 0.5;
+  color: #EDEDED;
 }
 body .main .content-container .company-info-blocks {
   flex-direction: column;
@@ -705,6 +822,7 @@ body .main .content-container .company-info .block-cooperation {
 }
 body .main .content-container .company-info-title {
   font-size: 12px;
+  color: #EDEDED;
 }
 body .main .content-container .company-info .copy-notification {
   display: inline-block;
@@ -724,29 +842,69 @@ body .main .content-container .company-info .copy-notification {
   body .main .block_video video {
     left: -50%;
   }
-  body .main .content-container .main-info .container .about-title {
-    font-size: 30px;
-  }
-}
-@media screen and (max-width: 1220px) {
   body .main .content-container {
     padding: 0 100px 0 100px;
   }
   body .main .content-container .main-info .container .about-title {
-    font-size: 26px;
+    font-size: 24px;
     letter-spacing: 0.91px;
   }
   body .main .content-container .main-info .container .hero-section .brand-info-about {
     max-width: 735px;
   }
 }
+@media screen and (max-width: 1220px) {
+  body .main .content-container .main-info .container .about-title {
+    font-size: 24px;
+  }
+  body .main .content-container .main-info .container .hero-section .content-block .about-clients {
+    margin-bottom: 62px;
+  }
+  body .main .content-container .main-info .container .hero-section .content-block .about-clients-list {
+    grid-template-columns: 150px 1fr;
+  }
+  body .main .content-container .main-info .container .hero-section .content-block .about-clients-list .logo_imans {
+    width: 83px;
+    height: 16.2px;
+  }
+  body .main .content-container .main-info .container .hero-section .content-block .about-clients-list .logo_gaming {
+    width: 140px;
+    height: 41.272px;
+  }
+  body .main .content-container .main-info .container .hero-section .content-block .about-clients-list .logo_africa {
+    width: 129.966px;
+    height: 21.22px;
+  }
+  body .main .content-container .main-info .container .hero-section .content-block .about-clients-list .logo_georgia {
+    width: 143px;
+    height: 18.86px;
+  }
+  body .main .content-container .main-info .container .hero-section .content-block .about-clients-list .logo_bacon {
+    width: 115px;
+    height: 11.994px;
+  }
+  body .main .content-container .main-info .container .hero-section .content-block .about-clients-list .logo_puma {
+    width: 48px;
+    height: 12.19px;
+  }
+  body .main .content-container .main-info .container .hero-section .content-block .about-clients-list p {
+    width: 180px;
+  }
+}
 @media screen and (max-width: 997px) {
+  body .popup_menu {
+    top: 25%;
+  }
+  body .popup_menu-gratitude {
+    top: 25%;
+  }
   body .main .content-container .main-info .container .hero-section .brand-info {
     display: flex;
     flex-direction: column;
   }
   body .main .content-container .main-info .container .hero-section .brand-info .primary-button {
     margin: 0 auto 70px;
+    padding: 17.5px 0 17.5px 20px;
   }
   body .main .content-container .main-info .container .hero-section .content-block .about-clients-list {
     grid-template-columns: 180px 1fr;
@@ -766,7 +924,13 @@ body .main .content-container .company-info .copy-notification {
     margin-bottom: 35px;
   }
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 870px) {
+  body .main .content-container .main-info .container .about .primary-button {
+    margin: 0 auto;
+  }
+  body .main .content-container .main-info .container .about-block {
+    margin-bottom: 44px;
+  }
   body .main .content-container .main-info .container .hero-section {
     margin-bottom: 62px;
   }
@@ -791,12 +955,6 @@ body .main .content-container .company-info .copy-notification {
   body .main .content-container .main-info .container .hero-section .content-block {
     flex-direction: column;
   }
-  body .main .content-container .main-info .container .hero-section .content-block .about-clients {
-    margin-bottom: 62px;
-  }
-  body .main .content-container .main-info .container .hero-section .content-block .about-clients-list {
-    grid-template-columns: 200px 1fr;
-  }
 }
 @media screen and (max-width: 800px) {
   body .main .block_video video {
@@ -804,6 +962,9 @@ body .main .content-container .company-info .copy-notification {
   }
 }
 @media screen and (max-width: 680px) {
+  body .main {
+    height: auto;
+  }
   body .main .content-container {
     padding: 0 75px 0 75px;
   }
@@ -912,8 +1073,8 @@ body .popup_menu-gratitude .private-info-wrapper {
     padding: 0 25px 0 25px;
   }
   body .main .content-container header .container .logo {
-    width: 133px;
-    height: 18px;
+    width: 194px;
+    height: 33px;
   }
   body .main .content-container header .container .lang_block .dropdown-lang {
     margin-right: 12px;
@@ -950,6 +1111,7 @@ body .popup_menu-gratitude .private-info-wrapper {
   body .main .content-container .main-info .container .hero-section .content-block .about-clients-list {
     -moz-column-gap: 18px;
          column-gap: 18px;
+    grid-template-columns: 141px 1fr;
   }
 }
 @media screen and (max-width: 375px) {
