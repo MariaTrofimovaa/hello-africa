@@ -12,31 +12,98 @@
     </div>
 
     <div class="hero-section">
-      <div class="brand-info">
-        <a href="#" class="primary-button"  target="_blank"> 
-          <p class="primary-button-text">{{presentation}}</p> 
-        </a>
-        <div class="brand">
+      {{!-- <div class="brand-info"> --}}
+        
+        {{!-- <div class="brand">
           <h3 class="brand-info-title">{{brand}}</h3>
           <a class="brand-info-title" href="https://www.imans.io" target="_blank">
             www.imans.io
           </a>
-        </div>
-        <div class="brand-info-about">
-          <div class="brand-info-about-owner">
-            <a href="http://www.imans.io" target="_blank">
-            <img class="logo-imans" src="./assets/img/logo-imans.svg" alt="Imans-logo" />
-            </a>
-            <p class="brand-info-about-text">
-              {{brand_about}}
-            </p>
-          </div>
-        </div>
-      </div>
+        </div> --}}
+      {{!-- </div> --}}
 
       <div class="content-block">
         <div class="about-clients">
-          <h3 class="brand-info-title">{{brand_info_title}}</h3>
+          <h3 class="brand-info-title primary-title ">{{brand}}</h3>
+          
+
+        {{!-- <div class="brand-info-about">
+          <div class="brand-info-about-owner">
+            <a href="https://www.imans.io" target="_blank">
+              <img class="logo-imans" src="./assets/img/logo-imans.svg" alt="Imans-logo" />
+            </a>
+           <div>
+            <p class="brand-info-about-text">
+              {{brand_about}}
+            </p>
+            <a class="brand-info-title" href="https://www.imans.io" target="_blank">
+              www.imans.io
+            </a>
+           </div>
+          </div>
+        </div> --}}
+
+        <div class="about-clients-list">
+          <a href="https://www.imans.io" target="_blank">
+            <img class="logo_imans" src="./assets/img/logo-imans.svg" alt="Imans logo" />
+          </a>
+          <div>
+            <p>{{brand_about}}</p>
+            <a class="brand-info-title" href="https://www.imans.io" target="_blank">
+              www.imans.io
+            </a>
+          </div>
+        </div>
+
+        <div class="about-clients-list">
+          <a href="https://www.igamingmanagement.io" target="_blank">
+              <img class="logo_gaming" src="./assets/img/logo_IGaming Management.svg" alt="IGaming logo" />
+          </a>
+          <div>
+            <p>{{gaming}}</p>
+            <a class="brand-info-title" href="https://www.igamingmanagement.io" target="_blank">
+              igamingmanagement.io
+            </a>
+          </div>
+        </div>
+                
+                <div class="about-clients-list">
+                  <a href="https://www.hellogeorgia.io" target="_blank">
+                    <img class="logo_georgia" src="./assets/img/logo_hello_Georgia.svg" alt="Georgia logo" />
+                  </a>
+                  <div>
+                    <p>{{georgia_text}}</p>
+                    <a class="brand-info-title" href="https://www.hellogeorgia.io" target="_blank">
+                      www.hellogeorgia.io
+                    </a>
+                  </div>
+                </div>
+                
+                <div class="about-clients-list">
+                  <a href="https://www.bacongames.com" target="_blank">
+                    <img class="logo_bacon" src="./assets/img/bacon games.svg" alt="Bacon logo" />
+                  </a>
+                  <div>
+                    <p>{{bacon_text}}</p>
+                    <a class="brand-info-title" href="https://www.bacongames.com" target="_blank">
+                      www.bacongames.com
+                    </a>
+                  </div>
+                </div>
+                
+                <div class="about-clients-list">
+                  <a href="https://www.puma.io" target="_blank">
+                    <img class="logo_puma" src="./assets/img/logo_puma.svg" alt="Puma logo" />
+                  </a>
+                  <div>
+                    <p>{{puma_text}}</p>
+                    <a class="brand-info-title" href="https://www.puma.io" target="_blank">
+                      www.puma.io
+                    </a>
+                  </div>
+                </div>
+
+          {{!-- <h3 class="brand-info-title">{{brand_info_title}}</h3>
           <ul class="about-clients-list">
             <li class="about-clients-text">
               <img src="./assets/img/bussines/dollar.svg" />
@@ -93,10 +160,16 @@
             <li class="about-clients-text">
               <img src="./assets/img/bussines/phone.svg" />{{telecom}}
             </li>
-          </ul>
+          </ul> --}}
         </div>
+        
         <div class="contacts-block">
           <div class="contacts-info">
+
+            <a href="" class="primary-button">
+              <p class="primary-button-text">{{presentation}}</p>
+            </a>
+           
             <div class="partner partner-original">
               <h3 class="brand-info-title partner-title">
                 {{partner}}
@@ -104,7 +177,7 @@
               <a class="brand-info-title" href="https://www.moyo.casino" target="_blank">www.moyo.casino
               </a>
               <a href="https://www.moyo.casino" target="_blank">
-              <img src="./assets/img/logo_moyo_casino.svg" alt="Moyo-logo" class="moyo-logo" />
+                <img src="./assets/img/logo_moyo_casino.svg" alt="Moyo-logo" class="moyo-logo" />
               </a>
             </div>
 
@@ -115,29 +188,29 @@
               <div class="region-social-links">
                 <p class="region-name">{{Georgia}}:</p>
                 <div class="social-links">
-                <a href="whatsapp://send?phone=+995558791268">
-                  <img class="social-links-icon" src="./assets/img/whatsapp.svg" alt="whatsapp-icon" />
-                </a>
-                <a href="tg://resolve?domain=infoimans">
-                  <img class="social-links-icon" src="./assets/img/telegram.svg" alt="telegram-icon" />
-                </a>
-                <a class="email-link" href="mailto:info@imans.io">
-                  <img class="social-links-icon" src="./assets/img/email.svg" alt="Email" />
-                </a>
+                  <a href="whatsapp://send?phone=+995558791268">
+                    <img class="social-links-icon" src="./assets/img/whatsapp.svg" alt="whatsapp-icon" />
+                  </a>
+                  <a href="tg://resolve?domain=infoimans">
+                    <img class="social-links-icon" src="./assets/img/telegram.svg" alt="telegram-icon" />
+                  </a>
+                  <a class="email-link" href="mailto:info@imans.io">
+                    <img class="social-links-icon" src="./assets/img/email.svg" alt="Email" />
+                  </a>
                 </div>
               </div>
               <div class="region-social-links">
                 <p class="region-name">{{Kenya}}:</p>
                 <div class="social-links">
-                <a href="whatsapp://send?phone=+995558791268">
-                  <img class="social-links-icon" src="./assets/img/whatsapp.svg" alt="whatsapp-icon" />
-                </a>
-                <a href="tg://resolve?domain=infoimans">
-                  <img class="social-links-icon" src="./assets/img/telegram.svg" alt="telegram-icon" />
-                </a>
-                <a class="email-link" href="mailto:info@imans.io">
-                  <img class="social-links-icon" src="./assets/img/email.svg" alt="Email" />
-                </a>
+                  <a href="whatsapp://send?phone=+995558791268">
+                    <img class="social-links-icon" src="./assets/img/whatsapp.svg" alt="whatsapp-icon" />
+                  </a>
+                  <a href="tg://resolve?domain=infoimans">
+                    <img class="social-links-icon" src="./assets/img/telegram.svg" alt="telegram-icon" />
+                  </a>
+                  <a class="email-link" href="mailto:info@imans.io">
+                    <img class="social-links-icon" src="./assets/img/email.svg" alt="Email" />
+                  </a>
                 </div>
               </div>
             </div>

@@ -9,6 +9,7 @@
     </h2>
     <form class="form" name="myForm" onSubmit="handleSubmit(event, window.location.href)">
       <div class="download-modal_inputs">
+        {{!-- <input type="hidden" name="_csrf" value="{{csrfToken}}"> --}}
         <label>
           <span class="input-title">{{name}}</span>
           <input type="text" name="name" autocomplete="off" placeholder="John" minlength="2" required />
@@ -56,25 +57,9 @@
     <h2 class="popup-title">{{gratitude_popup_title}}</h2>
     <p class="popup-text"> {{gratitude_popup_text}}</p>
     <span class="btn-close" onClick="gratitudeClosePopup()">
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="#FEC600"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M25 1L1 25"
-          stroke="#FEC600"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-        <path
-          d="M1 1L25 25"
-          stroke="#FEC600"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="#FEC600" xmlns="http://www.w3.org/2000/svg">
+        <path d="M25 1L1 25" stroke="#FEC600" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M1 1L25 25" stroke="#FEC600" stroke-linecap="round" stroke-linejoin="round" />
       </svg>
     </span>
   </div>
