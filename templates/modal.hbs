@@ -9,6 +9,7 @@
     </h2>
     <form class="form" name="myForm" onSubmit="handleSubmit(event, window.location.href)">
       <div class="download-modal_inputs">
+        {{!-- <input type="hidden" name="_csrf" value="{{csrfToken}}"> --}}
         <label>
           <span class="input-title">{{name}}</span>
           <input type="text" name="name" autocomplete="off" placeholder="John" minlength="2" required />
